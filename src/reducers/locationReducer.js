@@ -1,4 +1,14 @@
 export default function locationReducer(state = { locations: [] }, action) {
-  //this was just to see that our action was coming in correct. & the store could properly be updated by the reducer.
-  return action.payload;
+  switch (action.type) {
+    case "GET_LOCATIONS_SUCCESS": {
+      return Object.assign({}, state, {
+        locations: action.data.map((location) => {
+          return location;
+        }),
+      });
+      // console.log("ok");
+    }
+    default:
+      return state;
+  }
 }
