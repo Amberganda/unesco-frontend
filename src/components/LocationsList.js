@@ -1,18 +1,25 @@
 import React from "react";
+import { connect } from "react-redux";
 
 //functional because it's just going to do a list of compnents
 //need 5 funcitonal components
 
-// class LocationsList extends React.Component {
-//   render() {
-//     return <div>LocationsList</div>;
-//   }
-// }
-
 const LocationsList = (props) => {
   //from locations container props
 
-  return <div>LocationsList</div>;
+  return (
+    <ul>
+      {props.locations.map((location, index) => (
+        <li key={index}>{location.name}</li>
+      ))}
+    </ul>
+  );
 };
 
-export default LocationsList;
+const mapStateToProps = (state) => {
+  return {
+    locations: state.locations,
+  };
+};
+
+export default connect(mapStateToProps)(LocationsList);
