@@ -8,6 +8,5 @@ export function fetchLocations() {
       .then((response) => response.json())
       .then((data) => dispatch({ type: "GET_LOCATIONS_SUCCESS", data: data }));
     //THUNK LETS US CALL DISPATCH FROM INSIDE THIS ACTION CREATOR.
-    //   dispatch();
   };
 }

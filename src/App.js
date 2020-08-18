@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchLocations } from "./actions/fetchLocations";
+import { fetchLocations } from "./actions/fetchLocations"; //am i going to use t his?
+import LocationsContainer from "./containers/LocationsContainer";
 
 import "./App.css";
 class App extends Component {
@@ -13,7 +14,11 @@ class App extends Component {
   }
 
   render() {
-    return <div className="App">App</div>;
+    return (
+      <div className="App">
+        <LocationsContainer />
+      </div>
+    );
   }
 }
 // const mapStateToProps = () => {
