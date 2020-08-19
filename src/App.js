@@ -9,6 +9,7 @@ import "./App.css";
 import FavoritesList from "./components/FavoritesList";
 import DestinationsList from "./components/DestinationsList";
 import VisitedList from "./components/VisitedList";
+import NavBar from "./components/NavBar";
 
 class App extends Component {
   //great way to test that you're getting the data to make sure it's coming through properly
@@ -22,9 +23,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <a href="/locations"> locations </a>
-        <a href="/favorites"> favorites</a>
-
+        <NavBar />
         <Router>
           <div className="App">
             <Route path="/locations" component={LocationsList}></Route>

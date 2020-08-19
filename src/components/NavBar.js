@@ -1,16 +1,23 @@
 import React from "react";
-import "./App.css";
-import NavBar from "./components/NavBar";
+import "../App.css";
 
 function NavBar() {
   return (
     <nav>
       <h3>UNESCO LOGO</h3>
       <ul>
-        <li>LocationsList</li>
-        <li>FavoritesList</li>
-        <li>DestinationsList</li>
-        <li>VisitedList</li>
+        <li>
+          <a href="/locations"> Locations </a>
+        </li>
+        <li>
+          <a href="/favorites"> Favorites </a>
+        </li>
+        <li>
+          <a href="/destinations"> Destinations </a>
+        </li>
+        <li>
+          <a href="/visited"> Visited</a>
+        </li>
       </ul>
     </nav>
   );
