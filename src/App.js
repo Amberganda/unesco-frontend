@@ -2,8 +2,14 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchLocations } from "./actions/fetchLocations"; //am i going to use t his?
 import LocationsContainer from "./containers/LocationsContainer";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import LocationsList from "./components/LocationsList";
 
 import "./App.css";
+import FavoritesList from "./components/FavoritesList";
+import DestinationsList from "./components/DestinationsList";
+import VisitedList from "./components/VisitedList";
+
 class App extends Component {
   //great way to test that you're getting the data to make sure it's coming through properly
   componentDidMount() {
@@ -15,8 +21,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <LocationsContainer />
+      <div>
+        <a href="/locations"> locations </a>
+        <a href="/favorites"> favorites</a>
+
+        <Router>
+          <div className="App">
+            <Route path="/locations" component={LocationsList}></Route>
+            <Route path="/favorites" component={FavoritesList}></Route>
+            <Route path="/destinations" component={DestinationsList}></Route>
+            <Route path="/visited" component={VisitedList}></Route>
+          </div>
+        </Router>
       </div>
     );
   }
