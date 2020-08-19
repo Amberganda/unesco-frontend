@@ -1,19 +1,23 @@
 import React from "react";
 import "../App.css";
-// import { connect } from "react-redux";
-// import { fetchLocations } from "./actions/fetchLocations"; //am i going to use t his?
-// import LocationsContainer from "./containers/LocationsContainer";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import LocationsList from "./components/LocationsList";
+import { connect } from "react-redux";
 
 // import "./App.css";
 
-function VisitedList() {
+const VisitedList = (props) => {
   return (
-    <div>
-      <h1>VISITED PAGE</h1>
-    </div>
+    <ul>
+      {props.locations.map((location, index) => (
+        <li key={index}>{location.name}</li>
+      ))}
+    </ul>
   );
-}
+};
 
-export default VisitedList;
+const mapStateToProps = (state) => {
+  return {
+    locations: state.locations.filter((location) => location.visited),
+  };
+};
+
+export default connect(mapStateToProps)(VisitedList);
