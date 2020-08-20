@@ -1,4 +1,6 @@
 import React from "react";
+import Name from "../components/Name";
+import Actions from "./Actions";
 
 const Location = (props) => {
   return (
@@ -11,11 +13,9 @@ const Location = (props) => {
       </div>
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4">
-          Card Title<i class="material-icons right">more_vert</i>
+          <Name name={props.location.name} />
         </span>
-        <p>
-          <a href="#">This is a link</a>
-        </p>
+        <Actions />
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">
