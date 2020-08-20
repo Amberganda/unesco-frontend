@@ -1,14 +1,7 @@
 import React from "react";
-import Location from "../components/Location";
 
-class Location extends React.Component {
-  render() {
-    return (
-      <div>
-        <Location />
-      </div>
-    );
-  }
-}
+const Location = (props) => {
+  return <li key={props.index}>{props.location.name}</li>;
+};
 
 export default Location;

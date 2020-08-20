@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import Location from "./Location";
+import Location from "../containers/Location";
 
 //functional because it's just going to do a list of compnents
 //need 5 funcitonal STATELESS components

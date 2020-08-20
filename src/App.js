@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchLocations } from "./actions/fetchLocations"; //am i going to use t his?
-import LocationsContainer from "./containers/LocationsContainer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import LocationsList from "./components/LocationsList";
+import LocationsList from "./containers/LocationsList";
 
 import "./App.css";
-import FavoritesList from "./components/FavoritesList";
-import DestinationsList from "./components/DestinationsList";
-import VisitedList from "./components/VisitedList";
+import FavoritesList from "./containers/FavoritesList";
+import DestinationsList from "./containers/DestinationsList";
+import VisitedList from "./containers/VisitedList";
 import NavBar from "./components/NavBar";
 
 class App extends Component {
