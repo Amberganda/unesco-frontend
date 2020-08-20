@@ -2,9 +2,12 @@ import React from "react";
 
 const Location = (props) => {
   return (
-    <div class="card">
+    <div class="card small">
       <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src="images/office.jpg" />
+        <img
+          class="activator"
+          src="https://materializecss.com/images/office.jpg"
+        />
       </div>
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4">

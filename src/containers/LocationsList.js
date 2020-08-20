@@ -10,10 +10,13 @@ const LocationsList = (props) => {
 
   return (
     <div>
-      {props.locations.map((location, index) => (
-        // <li key={index}>{location.name}</li>
-        <Location index={index} location={location} />
-      ))}
+      <div class="row">
+        {props.locations.map((location, index) => (
+          <div class="col s4">
+            <Location index={index} location={location} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
