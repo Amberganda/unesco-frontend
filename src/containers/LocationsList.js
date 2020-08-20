@@ -9,12 +9,12 @@ const LocationsList = (props) => {
   //from locations container props
 
   return (
-    <ul>
+    <div>
       {props.locations.map((location, index) => (
         // <li key={index}>{location.name}</li>
         <Location index={index} location={location} />
       ))}
-    </ul>
+    </div>
   );
 };
 

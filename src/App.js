@@ -9,6 +9,7 @@ import FavoritesList from "./containers/FavoritesList";
 import DestinationsList from "./containers/DestinationsList";
 import VisitedList from "./containers/VisitedList";
 import NavBar from "./components/NavBar";
+import "materialize-css/dist/css/materialize.min.css";
 
 class App extends Component {
   //great way to test that you're getting the data to make sure it's coming through properly
