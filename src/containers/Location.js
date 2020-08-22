@@ -15,7 +15,7 @@ const Location = (props) => {
         <span class="card-title activator grey-text text-darken-4">
           <Name name={props.location.name} />
         </span>
-        <Actions />
+        <Actions location={props.location} />
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">
