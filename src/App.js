@@ -15,10 +15,7 @@ class App extends Component {
   //great way to test that you're getting the data to make
   //sure it's coming through properly
   componentDidMount() {
-    this.props.fetchLocations({
-      type: "FETCH_LOCATIONS",
-      payload: { name: "Location" },
-    });
+    this.props.fetchLocations();
   }
 
   render() {

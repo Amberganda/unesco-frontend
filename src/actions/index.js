@@ -13,8 +13,7 @@ export function fetchLocations() {
 
 export function updateFavoriteState() {
   return (dispatch) => {
-    fetch("http://localhost:3000/location/2/favorite") //hard coded id
-      .then((response) => response.json())
+    fetch("http://localhost:3000/location/2/favorite", { method: "POST" }) //hard coded id
       .then((data) => dispatch({ type: "POST_FAVORITE_SUCCESS", data: data }));
   };
 }
