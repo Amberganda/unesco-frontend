@@ -10,7 +10,7 @@ class Actions extends Component {
     return (
       <div class="card-action">
         <button
-          onClick={this.handleOnClickFavorites()}
+          onClick={this.handleOnClickFavorites}
           class="btn waves-effect waves-light"
           type="submit"
           name="action"
