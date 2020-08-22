@@ -3,7 +3,7 @@ import { updateFavoriteState } from "../actions";
 import { connect } from "react-redux";
 class Actions extends Component {
   handleOnClickFavorites = () => {
-    this.props.updateFavoriteState();
+    this.props.updateFavoriteState(this.props.location.id);
   };
 
   render() {

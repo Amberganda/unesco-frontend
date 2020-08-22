@@ -11,9 +11,9 @@ export function fetchLocations() {
   };
 }
 
-export function updateFavoriteState() {
+export function updateFavoriteState(id) {
   return (dispatch) => {
-    fetch("http://localhost:3000/location/2/favorite", { method: "POST" }) //hard coded id
-      .then((data) => dispatch({ type: "POST_FAVORITE_SUCCESS", data: data }));
+    fetch(`http://localhost:3000/location/${id}/favorite`, { method: "POST" }) //hard coded id
+      .then((data) => dispatch({ type: "POST_FAVORITE_SUCCESS", id: id }));
   };
 }

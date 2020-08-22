@@ -9,10 +9,9 @@ export default function locationReducer(state = { locations: [] }, action) {
       // console.log("ok");
     }
     case "POST_FAVORITE_SUCCESS": {
-      const id = 2; //hard coded
       return Object.assign({}, state, {
         locations: state.locations.map((location) => {
-          if (location.id == id) {
+          if (location.id == action.id) {
             return { ...location, favorite: !location.favorite };
           } else {
             return location;
