@@ -1,16 +1,19 @@
 import React from "react";
 import "../App.css";
 import { connect } from "react-redux";
-
-// import "./App.css";
+import Location from "../containers/Location";
 
 const FavoritesList = (props) => {
   return (
-    <ul>
-      {props.locations.map((location, index) => (
-        <li key={index}>{location.name}</li>
-      ))}
-    </ul>
+    <div>
+      <div class="row">
+        {props.locations.map((location, index) => (
+          <div class="col s4">
+            <Location key={index} location={location} />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
