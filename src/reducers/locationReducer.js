@@ -1,4 +1,7 @@
-export default function locationReducer(state = { locations: [] }, action) {
+export default function locationReducer(
+  state = { locations: [], favorite: [] },
+  action
+) {
   switch (action.type) {
     case "GET_LOCATIONS_SUCCESS": {
       return Object.assign({}, state, {
@@ -7,6 +10,13 @@ export default function locationReducer(state = { locations: [] }, action) {
         }),
       });
       // console.log("ok");
+    }
+    case "GET_FAVORITE_ACTION": {
+      return Object.assign({}, state, {
+        favorite: action.data.map((favorite) => {
+          return favorite;
+        }),
+      });
     }
     default:
       return state;
