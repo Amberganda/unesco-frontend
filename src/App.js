@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchLocations } from "./actions/fetchLocations"; //am i going to use t his?
+import { fetchLocations } from "./actions";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LocationsList from "./containers/LocationsList";
 
