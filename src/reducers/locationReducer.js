@@ -19,6 +19,29 @@ export default function locationReducer(state = { locations: [] }, action) {
         }),
       });
     }
+    case "POST_DESTINATION_SUCCESS": {
+      return Object.assign({}, state, {
+        locations: state.locations.map((location) => {
+          if (location.id == action.id) {
+            return { ...location, destination: !location.destination };
+          } else {
+            return location;
+          }
+        }),
+      });
+    }
+    case "POST_VISITED_SUCCESS": {
+      return Object.assign({}, state, {
+        locations: state.locations.map((location) => {
+          if (location.id == action.id) {
+            return { ...location, visited: !location.visited };
+          } else {
+            return location;
+          }
+        }),
+      });
+    }
+
     default:
       return state;
   }

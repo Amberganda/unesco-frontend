@@ -1,9 +1,19 @@
 import React, { Component } from "react";
-import { updateFavoriteState } from "../actions";
+import {
+  updateFavoriteState,
+  updateDestinationState,
+  updateVisitedState,
+} from "../actions";
 import { connect } from "react-redux";
 class Actions extends Component {
   handleOnClickFavorites = () => {
     this.props.updateFavoriteState(this.props.location.id);
+  };
+  handleOnClickDestinations = () => {
+    this.props.updateDestinationState(this.props.location.id);
+  };
+  handleOnClickVisited = () => {
+    this.props.updateVisitedState(this.props.location.id);
   };
 
   render() {
@@ -20,6 +30,7 @@ class Actions extends Component {
           </i>
         </button>
         <button
+          onClick={this.handleOnClickDestinations}
           class="btn waves-effect waves-light"
           type="submit"
           name="action"
@@ -29,6 +40,7 @@ class Actions extends Component {
           </i>
         </button>
         <button
+          onClick={this.handleOnClickVisited}
           class="btn waves-effect waves-light"
           type="submit"
           name="action"
@@ -42,4 +54,8 @@ class Actions extends Component {
   }
 }
 
-export default connect(null, { updateFavoriteState })(Actions);
+export default connect(null, {
+  updateFavoriteState,
+  updateDestinationState,
+  updateVisitedState,
+})(Actions);

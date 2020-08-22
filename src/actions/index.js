@@ -17,3 +17,19 @@ export function updateFavoriteState(id) {
       .then((data) => dispatch({ type: "POST_FAVORITE_SUCCESS", id: id }));
   };
 }
+
+export function updateDestinationState(id) {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/location/${id}/destination`, {
+      method: "POST",
+    }).then((data) => dispatch({ type: "POST_DESTINATION_SUCCESS", id: id }));
+  };
+}
+
+export function updateVisitedState(id) {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/location/${id}/visited`, {
+      method: "POST",
+    }).then((data) => dispatch({ type: "POST_VISITED_SUCCESS", id: id }));
+  };
+}
