@@ -10,3 +10,11 @@ export function fetchLocations() {
     //THUNK LETS US CALL DISPATCH FROM INSIDE THIS ACTION CREATOR.
   };
 }
+
+export function updateFavoriteState() {
+  return (dispatch) => {
+    fetch("http://localhost:3000/location/2/favorite") //hard coded id
+      .then((response) => response.json())
+      .then((data) => dispatch({ type: "POST_FAVORITE_SUCCESS", data: data }));
+  };
+}

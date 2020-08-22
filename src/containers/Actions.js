@@ -1,14 +1,16 @@
 import React, { Component } from "react";
+import { updateFavoriteState } from "../actions";
+import { connect } from "react-redux";
 class Actions extends Component {
-  handleOnClickFavorites() {
-    console.log("clicked");
-  }
+  handleOnClickFavorites = () => {
+    this.props.updateFavoriteState();
+  };
 
   render() {
     return (
       <div class="card-action">
         <button
-          onClick={this.handleOnClickFavorites}
+          onClick={this.handleOnClickFavorites()}
           class="btn waves-effect waves-light"
           type="submit"
           name="action"
@@ -40,4 +42,4 @@ class Actions extends Component {
   }
 }
 
-export default Actions;
+export default connect(null, { updateFavoriteState })(Actions);

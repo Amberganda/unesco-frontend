@@ -11,13 +11,6 @@ export default function locationReducer(
       });
       // console.log("ok");
     }
-    case "GET_FAVORITE_ACTION": {
-      return Object.assign({}, state, {
-        favorite: action.data.map((favorite) => {
-          return favorite;
-        }),
-      });
-    }
     default:
       return state;
   }
