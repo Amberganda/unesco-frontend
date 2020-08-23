@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchLocations } from "./actions";
+import { fetchLocations, fetchUnescoData } from "./actions";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LocationsList from "./containers/LocationsList";
 
@@ -16,6 +16,7 @@ class App extends Component {
   //sure it's coming through properly
   componentDidMount() {
     this.props.fetchLocations();
+    this.props.fetchUnescoData();
   }
 
   render() {
@@ -46,4 +47,4 @@ class App extends Component {
 //   };
 // };
 
-export default connect(null, { fetchLocations })(App);
+export default connect(null, { fetchLocations, fetchUnescoData })(App);

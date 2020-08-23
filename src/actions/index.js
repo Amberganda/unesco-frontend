@@ -11,6 +11,14 @@ export function fetchLocations() {
   };
 }
 
+export function fetchUnescoData() {
+  return (dispatch) => {
+    fetch("https://unesco-api.herokuapp.com/sites")
+      .then((response) => response.json())
+      .then((data) => dispatch({ type: "GET_UNESCO_SUCCESS", data: data }));
+  };
+}
+
 export function updateFavoriteState(id) {
   return (dispatch) => {
     fetch(`http://localhost:3000/location/${id}/favorite`, { method: "POST" }) //hard coded id
