@@ -1,4 +1,7 @@
-export default function locationReducer(state = { locations: [] }, action) {
+export default function locationReducer(
+  state = { locations: [], unesco_locations: [] },
+  action
+) {
   switch (action.type) {
     case "GET_LOCATIONS_SUCCESS": {
       return Object.assign({}, state, {
@@ -7,6 +10,13 @@ export default function locationReducer(state = { locations: [] }, action) {
         }),
       });
       // console.log("ok");
+    }
+    case "GET_UNESCO_SUCCESS": {
+      return Object.assign({}, state, {
+        unesco_locations: action.data.map((unesco_location) => {
+          return unesco_location;
+        }),
+      });
     }
     case "POST_FAVORITE_SUCCESS": {
       return Object.assign({}, state, {
