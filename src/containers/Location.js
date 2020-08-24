@@ -16,7 +16,7 @@ const Location = (props) => {
   return (
     <div className="card small">
       <div className="card-image waves-effect waves-block waves-light">
-        <img className="activator" src={getUnescoImage()} />
+        <img className="activator" src={getUnescoImage()} alt="pic" />
       </div>
       <div className="card-content">
         <span className="card-title activator grey-text text-darken-4">
