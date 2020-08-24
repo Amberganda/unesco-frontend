@@ -18,34 +18,34 @@ class Actions extends Component {
 
   render() {
     return (
-      <div class="card-action">
+      <div className="card-action">
         <button
           onClick={this.handleOnClickFavorites}
-          class="btn waves-effect waves-light"
+          className="btn waves-effect waves-light"
           type="submit"
           name="action"
         >
-          <i class="material-icons right">
+          <i className="material-icons right">
             {this.props.location.favorite ? "favorite" : "favorite_border"}
           </i>
         </button>
         <button
           onClick={this.handleOnClickDestinations}
-          class="btn waves-effect waves-light"
+          className="btn waves-effect waves-light"
           type="submit"
           name="action"
         >
-          <i class="material-icons right">
+          <i className="material-icons right">
             {this.props.location.destination ? "add_box" : "add"}
           </i>
         </button>
         <button
           onClick={this.handleOnClickVisited}
-          class="btn waves-effect waves-light"
+          className="btn waves-effect waves-light"
           type="submit"
           name="action"
         >
-          <i class="material-icons right">
+          <i className="material-icons right">
             {this.props.location.visited ? "check_box" : "check"}
           </i>
         </button>

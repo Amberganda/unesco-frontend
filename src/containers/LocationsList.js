@@ -10,9 +10,9 @@ const LocationsList = (props) => {
 
   return (
     <div>
-      <div class="row">
+      <div className="row">
         {props.locations.map((location, index) => (
-          <div class="col s4">
+          <div className="col s4">
             <Location index={index} location={location} />
           </div>
         ))}

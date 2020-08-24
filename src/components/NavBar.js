@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">
+      <div className="nav-wrapper">
+        <a href="#" className="brand-logo">
           UNESCO LOGO
         </a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>
             <a href="sass.html">
-              <i class="material-icons">search</i>
+              <i className="material-icons">search</i>
             </a>
           </li>
           <li>
