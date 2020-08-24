@@ -12,7 +12,7 @@ const LocationsList = (props) => {
     <div>
       <div className="row">
         {props.locations.map((location, index) => (
-          <div className="col s4">
+          <div className="col s4" key={index}>
             <Location index={index} location={location} />
           </div>
         ))}
