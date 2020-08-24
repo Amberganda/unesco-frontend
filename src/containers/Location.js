@@ -1,6 +1,7 @@
 import React from "react";
 import Name from "../components/Name";
 import Actions from "./Actions";
+import { connect } from "react-redux";
 
 //if props.unesco_locaiton is defined in img
 const Location = (props) => {
@@ -38,5 +39,15 @@ const Location = (props) => {
     /* <li key={props.index}>{props.location.name}</li>; */
   }
 };
+//https://stackoverflow.com/questions/41198842/what-is-the-use-of-the-ownprops-arg-in-mapstatetoprops-and-mapdispatchtoprops
+const mapStateToProps = (state, props) => {
+  const unesco_location = state.unesco_locations.find(
+    (element) => element.unesco_id_number == props.location.unesco_api_id
+  );
+  return {
+    ...props,
+    unesco_location: unesco_location,
+  };
+};
 
-export default Location;
+export default connect(mapStateToProps)(Location);

@@ -8,22 +8,12 @@ import Location from "../containers/Location";
 const LocationsList = (props) => {
   //from locations container props
 
-  const unesco_location = (id) => {
-    return props.unesco_locations.find(
-      (unesco_location) => unesco_location.unesco_id_number == id
-    );
-  };
-
   return (
     <div>
       <div class="row">
         {props.locations.map((location, index) => (
           <div class="col s4">
-            <Location
-              index={index}
-              location={location}
-              unesco_location={unesco_location(location.unesco_api_id)}
-            />
+            <Location index={index} location={location} />
           </div>
         ))}
       </div>
@@ -34,7 +24,6 @@ const LocationsList = (props) => {
 const mapStateToProps = (state) => {
   return {
     locations: state.locations,
-    unesco_locations: state.unesco_locations,
   };
 };
 
