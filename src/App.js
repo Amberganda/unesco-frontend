@@ -22,8 +22,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
         <Router>
+          <NavBar />
           <div className="App">
             <Route path="/locations" component={LocationsList}></Route>
             <Route path="/favorites" component={FavoritesList}></Route>
