@@ -10,11 +10,6 @@ function NavBar() {
         </a>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>
-            <a href="sass.html">
-              <i className="material-icons">search</i>
-            </a>
-          </li>
-          <li>
             <Link to="/locations"> Locations </Link>
           </li>
           <li>
