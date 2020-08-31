@@ -1,13 +1,10 @@
 //this is our action creator function.
-//what we return from this function for what we dispatch is an action object (or just an action)
-// so an action creator creates an action object, and then that action object will be dispatched to our reducer
-//which will then return our new version of our state based on the action that we sent.
 export function fetchLocations() {
   return (dispatch) => {
+    //returning a fucnitona that takes a funciton.
     fetch("http://localhost:3000/locations")
       .then((response) => response.json())
-      .then((data) => dispatch({ type: "GET_LOCATIONS_SUCCESS", data: data }));
-    //THUNK LETS US CALL DISPATCH FROM INSIDE THIS ACTION CREATOR.
+      .then((data) => dispatch({ type: "GET_LOCATIONS_SUCCESS", data: data })); //text into js object.
   };
 }
 
@@ -18,10 +15,12 @@ export function fetchUnescoData() {
       .then((data) => dispatch({ type: "GET_UNESCO_SUCCESS", data: data }));
   };
 }
-
 export function updateFavoriteState(id) {
   return (dispatch) => {
+    //dealer, hit me up. call you back
+    //returns a function a that takes a dispatch function. returns a function that takes a function.
     fetch(`http://localhost:3000/location/${id}/favorite`, {
+      //no body, only headers & status code.
       method: "POST",
     }).then((data) => dispatch({ type: "POST_FAVORITE_SUCCESS", id: id }));
   };

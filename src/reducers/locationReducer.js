@@ -1,14 +1,20 @@
 export default function locationReducer(
-  state = { locations: [], unesco_locations: [] },
-  action
+  state = { locations: [], unesco_locations: [] }, //default initial state. location backend & unesco 3rd party
+  action //action that just happened. return result of the state.
 ) {
   switch (action.type) {
     case "GET_LOCATIONS_SUCCESS": {
-      return Object.assign({}, state, {
+      return {
+        ...state,
         locations: action.data.map((location) => {
           return location;
         }),
-      });
+      };
+      // return Object.assign({}, state, {
+      //   locations: action.data.map((location) => {
+      //     return location;
+      //   }),
+      // });
       // console.log("ok");
     }
     case "GET_UNESCO_SUCCESS": {

@@ -12,8 +12,6 @@ import NavBar from "./components/NavBar";
 import "materialize-css/dist/css/materialize.min.css";
 
 class App extends Component {
-  //great way to test that you're getting the data to make
-  //sure it's coming through properly
   componentDidMount() {
     this.props.fetchLocations();
     this.props.fetchUnescoData();
@@ -35,16 +33,5 @@ class App extends Component {
     );
   }
 }
-// const mapStateToProps = () => {
-//mapStateToProps gives us access to SEE waht
-//is already in our store
-//we have to pass it to connect becasue the connect is our
-//way of connecting that redux store to this specific component
-
-//our way of accessing value in our store as props.
-//   return {
-//     locations: state.locations,
-//   };
-// };
 
 export default connect(null, { fetchLocations, fetchUnescoData })(App);
