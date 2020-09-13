@@ -1,6 +1,6 @@
 export default function locationReducer(
-  state = { locations: [], unesco_locations: [] }, //default initial state. location backend & unesco 3rd party
-  action //action that just happened. return result of the state.
+  state = { locations: [], unesco_locations: [] },
+  action
 ) {
   switch (action.type) {
     case "GET_LOCATIONS_SUCCESS": {
@@ -18,14 +18,16 @@ export default function locationReducer(
       // console.log("ok");
     }
     case "GET_UNESCO_SUCCESS": {
-      return Object.assign({}, state, {
+      return {
+        ...state,
         unesco_locations: action.data.map((unesco_location) => {
           return unesco_location;
         }),
-      });
+      };
     }
     case "POST_FAVORITE_SUCCESS": {
-      return Object.assign({}, state, {
+      return {
+        ...state,
         locations: state.locations.map((location) => {
           if (location.id == action.id) {
             return { ...location, favorite: !location.favorite };
@@ -33,10 +35,11 @@ export default function locationReducer(
             return location;
           }
         }),
-      });
+      };
     }
     case "POST_DESTINATION_SUCCESS": {
-      return Object.assign({}, state, {
+      return {
+        ...state,
         locations: state.locations.map((location) => {
           if (location.id == action.id) {
             return { ...location, destination: !location.destination };
@@ -44,10 +47,11 @@ export default function locationReducer(
             return location;
           }
         }),
-      });
+      };
     }
     case "POST_VISITED_SUCCESS": {
-      return Object.assign({}, state, {
+      return {
+        ...state,
         locations: state.locations.map((location) => {
           if (location.id == action.id) {
             return { ...location, visited: !location.visited };
@@ -55,7 +59,7 @@ export default function locationReducer(
             return location;
           }
         }),
-      });
+      };
     }
 
     default:
